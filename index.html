@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en" data-era="aqua">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retrofitting: modern apps for old Macs</title>
+<meta name="description" content="Apps for Mac OS X Aqua (10.3 to 10.5, PowerPC) and Mac OS 9 Classic. First project: LocalSend Retro, file sharing with the official LocalSend app.">
+<meta name="theme-color" content="#ececec">
+<meta property="og:title" content="Retrofitting: modern apps for old Macs">
+<meta property="og:description" content="Apps for Mac OS X Aqua and Mac OS 9 Classic. First project: LocalSend Retro.">
+<meta property="og:image" content="https://viksn0w.github.io/retrofitting/assets/icon-aqua.png">
+<link rel="icon" type="image/png" href="assets/icon-os9-32.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/source-sans-3-latin-700-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/pixelify-sans-latin-700-normal.woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>
+/* choose the era before first paint: ?era=classic, then the saved choice */
+(function () {
+  var era = "aqua";
+  try {
+    var q = new URLSearchParams(location.search).get("era");
+    var s = localStorage.getItem("retrofitting-era");
+    if (q === "classic" || q === "aqua") era = q; else if (s === "classic" || s === "aqua") era = s;
+  } catch (e) {}
+  document.documentElement.setAttribute("data-era", era);
+})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="menubar">
+  <nav class="menus" aria-label="Sections">
+    <a class="app-menu" href="#top">Retrofitting</a>
+    <a href="#projects">Projects</a>
+    <a href="#get">Get it</a>
+    <a href="#about">About</a>
+    <a class="menu-ext" href="https://github.com/VikSn0w" rel="noopener">GitHub</a>
+  </nav>
+  <div class="menu-status" aria-hidden="true">
+    <span class="era-name" data-era-label>Aqua</span>
+    <time class="clock" id="clock"></time>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="desktop" id="top" aria-labelledby="h1">
+    <article class="win win-about" data-draggable>
+      <div class="titlebar">
+        <span class="ctl ctl-close" aria-hidden="true"></span>
+        <span class="ctl ctl-min" aria-hidden="true"></span>
+        <span class="ctl ctl-zoom" aria-hidden="true"></span>
+        <span class="title">About Retrofitting</span>
+      </div>
+      <div class="win-body">
+        <h1 id="h1" class="wordmark">Retrofitting</h1>
+        <p class="lede">Modern things for old Macs. Apps for Mac&nbsp;OS&nbsp;X Aqua and Mac&nbsp;OS&nbsp;9 Classic, made to run on the real hardware.</p>
+
+        <fieldset class="era-switch">
+          <legend>Show this page as</legend>
+          <label class="era-opt">
+            <input type="radio" name="era" value="aqua">
+            <span class="era-face"><span class="era-title">Aqua</span><span class="era-sub">Mac OS X 10.3 to 10.5</span></span>
+          </label>
+          <label class="era-opt">
+            <input type="radio" name="era" value="classic">
+            <span class="era-face"><span class="era-title">Classic</span><span class="era-sub">Mac OS 9</span></span>
+          </label>
+        </fieldset>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#get">Get LocalSend Retro</a>
+          <a class="btn" href="https://github.com/VikSn0w/localsend-retro" rel="noopener">View source</a>
+        </div>
+        <p class="note">First release coming soon. The source is open today.</p>
+      </div>
+    </article>
+
+    <figure class="win win-app" data-draggable>
+      <div class="titlebar">
+        <span class="ctl ctl-close" aria-hidden="true"></span>
+        <span class="ctl ctl-min" aria-hidden="true"></span>
+        <span class="ctl ctl-zoom" aria-hidden="true"></span>
+        <span class="title">LocalSend Retro</span>
+      </div>
+      <div class="win-body app-mock" aria-hidden="true">
+        <div class="mock-row">
+          <span class="mock-label">Device name:</span>
+          <span class="mock-field">iMac G4 (PPC)</span>
+        </div>
+        <div class="mock-head">Nearby devices</div>
+        <div class="mock-list">
+          <div class="mock-cols"><span>Name</span><span>Device</span><span>Address</span></div>
+          <div class="mock-item is-selected"><span>Pixel 8 Pro</span><span>mobile</span><span>192.168.1.23</span></div>
+          <div class="mock-item"><span>Studio PC</span><span>desktop</span><span>192.168.1.40</span></div>
+          <div class="mock-item"><span>Living room iPad</span><span>mobile</span><span>192.168.1.17</span></div>
+        </div>
+        <div class="mock-buttons">
+          <span class="mock-btn is-default">Send File...</span>
+          <span class="mock-btn">Refresh</span>
+        </div>
+        <div class="mock-bar"><span style="width:62%"></span></div>
+        <div class="mock-status">Receiving holiday.jpg: 62%</div>
+        <div class="mock-save"><span>Save to:</span> <span>~/Downloads</span></div>
+      </div>
+      <figcaption>Illustration of the app window. The devices and addresses are made up.</figcaption>
+    </figure>
+
+    <a class="desk-icon desk-icon-app" href="#projects">
+      <img class="icon-aqua" src="assets/icon-aqua.png" width="64" height="64" alt="">
+      <img class="icon-os9" src="assets/icon-os9-32.png" width="32" height="32" alt="">
+      <span>LocalSend Retro</span>
+    </a>
+    <a class="desk-icon desk-icon-doc" href="https://github.com/VikSn0w/localsend-retro#readme" rel="noopener">
+      <svg viewBox="0 0 48 56" width="44" height="52" aria-hidden="true" focusable="false">
+        <path d="M6 2h26l10 10v42H6z" class="doc-body"/>
+        <path d="M32 2v10h10" class="doc-fold"/>
+        <path d="M13 24h22M13 31h22M13 38h22M13 45h14" class="doc-lines"/>
+      </svg>
+      <span>Read Me</span>
+    </a>
+  </section>
+
+  <section class="band" id="projects" aria-labelledby="projects-h">
+    <div class="win win-wide">
+      <div class="titlebar">
+        <span class="ctl ctl-close" aria-hidden="true"></span>
+        <span class="ctl ctl-min" aria-hidden="true"></span>
+        <span class="ctl ctl-zoom" aria-hidden="true"></span>
+        <h2 class="title" id="projects-h">Projects</h2>
+      </div>
+      <div class="finder">
+        <ul class="side" aria-label="Project list">
+          <li class="side-item is-active">
+            <img class="icon-aqua" src="assets/icon-aqua.png" width="28" height="28" alt="">
+            <img class="icon-os9" src="assets/icon-os9-16.png" width="16" height="16" alt="">
+            <span>LocalSend Retro</span>
+          </li>
+          <li class="side-item is-dim"><span class="side-dot" aria-hidden="true"></span><span>More apps, later</span></li>
+        </ul>
+        <div class="detail">
+          <div class="detail-head">
+            <h3>LocalSend Retro</h3>
+            <p>Share files with the official LocalSend app on phones and modern computers. Your old Mac shows up in its list, and you can send and receive in both directions.</p>
+          </div>
+          <div class="table-wrap">
+            <table class="compare">
+              <caption class="sr-only">What LocalSend Retro does on each system</caption>
+              <thead>
+                <tr>
+                  <td></td>
+                  <th scope="col">
+                    <img class="icon-aqua" src="assets/icon-aqua.png" width="44" height="44" alt="">
+                    <span>Mac OS X<small>Aqua, 10.3 to 10.5</small></span>
+                  </th>
+                  <th scope="col">
+                    <img class="icon-os9" src="assets/icon-os9-32.png" width="32" height="32" alt="">
+                    <span>Mac OS 9<small>Classic</small></span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Runs on</th>
+                  <td data-label="Mac OS X">PowerPC Macs with Mac OS X 10.3 to 10.5</td>
+                  <td data-label="Mac OS 9">PowerPC Macs with Mac OS 9.x and Open Transport</td>
+                </tr>
+                <tr>
+                  <th scope="row">Status</th>
+                  <td data-label="Mac OS X"><span class="tag tag-ok">Working</span> Tested on 10.5 Leopard. The 10.3 and 10.4 builds are not tested yet.</td>
+                  <td data-label="Mac OS 9"><span class="tag tag-wip">In development</span> Source is ready, but it has not been built on real hardware yet.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Finds devices</th>
+                  <td data-label="Mac OS X">Yes, on your local network</td>
+                  <td data-label="Mac OS 9">Designed to, on your local network (untested)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Receives files</th>
+                  <td data-label="Mac OS X">From any LocalSend device</td>
+                  <td data-label="Mac OS 9">Designed to, from any LocalSend device (untested)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sends files</th>
+                  <td data-label="Mac OS X">To any LocalSend device. Encrypted devices need 10.4 or later, which is untested so far.</td>
+                  <td data-label="Mac OS 9">Designed for devices with encryption turned off only (untested)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Device name</th>
+                  <td data-label="Mac OS X">You can change it</td>
+                  <td data-label="Mac OS 9">Planned</td>
+                </tr>
+                <tr>
+                  <th scope="row">Updates</th>
+                  <td data-label="Mac OS X">Built in. Each update is checked against a signature before it installs.</td>
+                  <td data-label="Mac OS 9">Download new versions by hand</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="get" aria-labelledby="get-h">
+    <div class="win win-mid">
+      <div class="titlebar">
+        <span class="ctl ctl-close" aria-hidden="true"></span>
+        <span class="ctl ctl-min" aria-hidden="true"></span>
+        <span class="ctl ctl-zoom" aria-hidden="true"></span>
+        <h2 class="title" id="get-h">Get LocalSend Retro</h2>
+      </div>
+      <div class="win-body">
+        <div class="tabs" role="tablist" aria-label="Choose your system">
+          <button class="tab" role="tab" id="tab-osx" aria-controls="panel-osx" aria-selected="true" data-tab="osx" type="button">Mac OS X</button>
+          <button class="tab" role="tab" id="tab-os9" aria-controls="panel-os9" aria-selected="false" data-tab="os9" type="button" tabindex="-1">Mac OS 9</button>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-osx" aria-labelledby="tab-osx">
+          <div class="get-main">
+            <button class="btn btn-primary" type="button" disabled>Download LocalSend-macosx-ppc.zip</button>
+            <p class="note">First release coming soon. Releases will appear on <a href="https://github.com/VikSn0w/localsend-retro/releases" rel="noopener">GitHub</a>, and the app can update itself from there.</p>
+          </div>
+          <h3>Build it yourself today</h3>
+          <ol class="steps">
+            <li>Install Xcode Tools on the old Mac. They include <code>gcc</code>.</li>
+            <li><a href="https://github.com/VikSn0w/localsend-retro/archive/refs/heads/main.zip" rel="noopener">Download the source</a> and unzip it.</li>
+            <li>
+              Open Terminal, go into the folder and run:
+              <span class="cmd"><code>sh build.sh</code><button class="copy" type="button" data-copy="sh build.sh">Copy</button></span>
+            </li>
+            <li>Open <code>LocalSend.app</code>. Pick your Mac in the LocalSend app on your phone and send a file.</li>
+          </ol>
+          <p class="fine">On Mac OS X 10.3 the build leaves out encryption. Sending to encrypted devices needs 10.4 or later.</p>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-os9" aria-labelledby="tab-os9" hidden>
+          <div class="get-main">
+            <a class="btn btn-primary" href="https://github.com/VikSn0w/localsend-retro/tree/main/os9" rel="noopener">Open the Mac OS 9 source</a>
+            <p class="note">No ready-made application yet. You build it on the OS 9 Mac with Apple's free MPW.</p>
+          </div>
+          <h3>Build it with MPW</h3>
+          <ol class="steps">
+            <li>Install MPW with the Universal Interfaces. Both are free from Apple.</li>
+            <li>Copy the <code>os9</code>, <code>src</code> and <code>assets</code> folders to the OS 9 Mac.</li>
+            <li>
+              In the MPW Shell, set the project folder as the directory and run:
+              <span class="cmd"><code>Execute :os9:build.mpw</code><button class="copy" type="button" data-copy="Execute :os9:build.mpw">Copy</button></span>
+            </li>
+            <li>Open the new <code>LocalSend</code> application. It is designed to receive from every LocalSend device.</li>
+          </ol>
+          <p class="fine">This version is untested on real hardware. If you try it, please <a href="https://github.com/VikSn0w/localsend-retro/issues" rel="noopener">tell me what happened</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="about" aria-labelledby="about-h">
+    <div class="win win-doc">
+      <div class="titlebar">
+        <span class="ctl ctl-close" aria-hidden="true"></span>
+        <span class="ctl ctl-min" aria-hidden="true"></span>
+        <span class="ctl ctl-zoom" aria-hidden="true"></span>
+        <h2 class="title" id="about-h">Read Me</h2>
+      </div>
+      <div class="win-body doc">
+        <p>Retrofitting collects apps that bring modern things to old Macs. Each one is built to run on the real machines, with the real interface of its time: Aqua on Mac OS X 10.3 to 10.5, Platinum on Mac OS 9.</p>
+        <p>LocalSend Retro is the first. It speaks the real LocalSend protocol, so a PowerPC Mac appears in the official LocalSend app, next to your phone and your laptop.</p>
+        <h3>Why you can trust it</h3>
+        <ul>
+          <li>The code is open and MIT licensed. Read all of it on <a href="https://github.com/VikSn0w/localsend-retro" rel="noopener">GitHub</a>.</li>
+          <li>On Mac OS X, an update only installs after its signature checks out against a key built into the app, and only after you say yes.</li>
+          <li>This page has no accounts, no analytics and no trackers.</li>
+          <li>It is an independent project, not affiliated with LocalSend.</li>
+        </ul>
+        <h3>Help test</h3>
+        <p>Have a Panther or Tiger Mac, or one that still boots Mac OS 9? Try a build and <a href="https://github.com/VikSn0w/localsend-retro/issues" rel="noopener">open an issue</a> with what worked and what didn't. That is the fastest way to move a build from "untested" to "working".</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="dock-wrap">
+  <nav class="dock" aria-label="Project links">
+    <a class="dock-item" href="https://github.com/VikSn0w/localsend-retro" rel="noopener">
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M4 11h13l3 4h16v18H4z" class="g-a"/><path d="M4 17h32v16H4z" class="g-b"/></svg>
+      <span>Source</span>
+    </a>
+    <a class="dock-item" href="https://github.com/VikSn0w/localsend-retro/releases" rel="noopener">
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M6 6h16l14 14-16 16L6 22z" class="g-a"/><circle cx="14" cy="14" r="3" class="g-b"/></svg>
+      <span>Releases</span>
+    </a>
+    <a class="dock-item" href="https://github.com/VikSn0w/localsend-retro/issues" rel="noopener">
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M5 7h30v20H20l-8 7v-7H5z" class="g-a"/><path d="M12 14h16M12 19h10" class="g-line"/></svg>
+      <span>Issues</span>
+    </a>
+    <a class="dock-item" href="https://github.com/VikSn0w/localsend-retro/blob/main/LICENSE" rel="noopener">
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M20 5v28M8 33h24M10 12h20" class="g-line"/><path d="M5 22l5-10 5 10zM25 22l5-10 5 10z" class="g-a"/></svg>
+      <span>MIT license</span>
+    </a>
+  </nav>
+  <p class="legal">Retrofitting by Vittorio Picone (<a href="https://github.com/VikSn0w" rel="noopener">VikSn0w</a>). Not affiliated with or endorsed by LocalSend. Mac OS X and Mac OS are trademarks of Apple Inc. Fonts: Source Sans 3 and Pixelify Sans, SIL Open Font License.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
