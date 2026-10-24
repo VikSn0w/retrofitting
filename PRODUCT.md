@@ -30,7 +30,7 @@ Visitors often browse from the very old Mac or from a modern machine next to it,
 
 - LocalSend Retro, Mac OS X 10.3 to 10.5 (PowerPC): finds LocalSend devices, receives files, sends files (HTTPS to encrypted devices on 10.4 and later, plain HTTP on 10.3), editable device name, About window, signed auto-update. Tested only on Mac OS X 10.5 Leopard so far; 10.3 and 10.4 builds are untested.
 - LocalSend Retro, Mac OS 9 (Carbon, Mac OS 9.1+ with CarbonLib): finds LocalSend devices, receives files from any device, editable device name; no sending yet and no auto-update (no TLS on OS 9). Built with Retro68 and tested on one real Mac OS 9 machine.
-- No first release is published yet. Download buttons must say so until a release exists.
+- Release v0.1.1 is published with a signed Mac OS X (10.5, PowerPC) zip and the Mac OS 9 zip. Download buttons link to the latest release's assets.
 - Not affiliated with LocalSend. Project is MIT licensed.
 
 ## Brand Commitments
