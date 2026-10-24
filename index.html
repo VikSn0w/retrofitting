@@ -73,7 +73,7 @@
           <a class="btn btn-primary" href="#get">Get LocalSend Retro</a>
           <a class="btn" href="https://github.com/VikSn0w/localsend-retro" rel="noopener">View source</a>
         </div>
-        <p class="note">Version 0.1.1 is out for Mac OS X 10.5. The source is open.</p>
+        <p class="note">Version 0.1.1 is out for Mac OS X 10.5 and Mac OS 9. The source is open.</p>
       </div>
     </article>
 
@@ -142,7 +142,7 @@
         <div class="detail">
           <div class="detail-head">
             <h3>LocalSend Retro</h3>
-            <p>Share files with the official LocalSend app on phones and modern computers. Your old Mac shows up in its list, and you can send and receive in both directions.</p>
+            <p>Share files with the official LocalSend app on phones and modern computers. Your old Mac shows up in its list, so you can send files to it. On Mac OS X it can send files back, too.</p>
           </div>
           <div class="table-wrap">
             <table class="compare">
@@ -164,32 +164,32 @@
                 <tr>
                   <th scope="row">Runs on</th>
                   <td data-label="Mac OS X">PowerPC Macs with Mac OS X 10.3 to 10.5</td>
-                  <td data-label="Mac OS 9">PowerPC Macs with Mac OS 9.x and Open Transport</td>
+                  <td data-label="Mac OS 9">PowerPC Macs with Mac OS 9.1 or later and CarbonLib (9.2.1 is fine)</td>
                 </tr>
                 <tr>
                   <th scope="row">Status</th>
                   <td data-label="Mac OS X"><span class="tag tag-ok">Working</span> Tested on 10.5 Leopard. The 10.3 and 10.4 builds are not tested yet.</td>
-                  <td data-label="Mac OS 9"><span class="tag tag-wip">In development</span> Source is ready, but it has not been built on real hardware yet.</td>
+                  <td data-label="Mac OS 9"><span class="tag tag-ok">Working</span> Tested on a real Mac OS 9 machine. Early: one machine so far.</td>
                 </tr>
                 <tr>
                   <th scope="row">Finds devices</th>
                   <td data-label="Mac OS X">Yes, on your local network</td>
-                  <td data-label="Mac OS 9">Designed to, on your local network (untested)</td>
+                  <td data-label="Mac OS 9">Yes, on your local network</td>
                 </tr>
                 <tr>
                   <th scope="row">Receives files</th>
                   <td data-label="Mac OS X">From any LocalSend device</td>
-                  <td data-label="Mac OS 9">Designed to, from any LocalSend device (untested)</td>
+                  <td data-label="Mac OS 9">From any LocalSend device</td>
                 </tr>
                 <tr>
                   <th scope="row">Sends files</th>
                   <td data-label="Mac OS X">To any LocalSend device. Encrypted devices need 10.4 or later, which is untested so far.</td>
-                  <td data-label="Mac OS 9">Designed for devices with encryption turned off only (untested)</td>
+                  <td data-label="Mac OS 9">Not yet</td>
                 </tr>
                 <tr>
                   <th scope="row">Device name</th>
                   <td data-label="Mac OS X">You can change it</td>
-                  <td data-label="Mac OS 9">Planned</td>
+                  <td data-label="Mac OS 9">You can change it</td>
                 </tr>
                 <tr>
                   <th scope="row">Updates</th>
@@ -238,20 +238,17 @@
 
         <div class="panel" role="tabpanel" id="panel-os9" aria-labelledby="tab-os9" hidden>
           <div class="get-main">
-            <a class="btn btn-primary" href="https://github.com/VikSn0w/localsend-retro/tree/main/os9" rel="noopener">Open the Mac OS 9 source</a>
-            <p class="note">No ready-made application yet. You build it on the OS 9 Mac with Apple's free MPW.</p>
+            <a class="btn btn-primary" href="https://github.com/VikSn0w/localsend-retro/releases/latest/download/LocalSend-OS9.zip" rel="noopener">Download LocalSend for Mac OS 9</a>
+            <p class="note">For PowerPC Macs with Mac OS 9.1 or later and CarbonLib (9.2.1 is fine). Version 0.1.1. It receives files; sending from the Mac comes later.</p>
           </div>
-          <h3>Build it with MPW</h3>
+          <h3>Install it</h3>
           <ol class="steps">
-            <li>Install MPW with the Universal Interfaces. Both are free from Apple.</li>
-            <li>Copy the <code>os9</code>, <code>src</code> and <code>assets</code> folders to the OS 9 Mac.</li>
-            <li>
-              In the MPW Shell, set the project folder as the directory and run:
-              <span class="cmd"><code>Execute :os9:build.mpw</code><button class="copy" type="button" data-copy="Execute :os9:build.mpw">Copy</button></span>
-            </li>
-            <li>Open the new <code>LocalSend</code> application. It is designed to receive from every LocalSend device.</li>
+            <li>Unzip the download on a modern Mac. It holds the application as a MacBinary file (<code>LocalSend.bin</code>), a disk image and a short README.</li>
+            <li>Get it to the OS 9 Mac: copy <code>LocalSend.bin</code> over and open it with StuffIt Expander, or format a USB stick as Mac OS Extended and use the included install script.</li>
+            <li>Make sure TCP/IP is set up (Ethernet), then open LocalSend. Its window shows this Mac's address.</li>
+            <li>On another device, open the LocalSend app, pick your OS 9 Mac in the list and send a file. Press Accept on the OS 9 Mac and the file lands on its Desktop.</li>
           </ol>
-          <p class="fine">This version is untested on real hardware. If you try it, please <a href="https://github.com/VikSn0w/localsend-retro/issues" rel="noopener">tell me what happened</a>.</p>
+          <p class="fine">Pick the Mac from LocalSend's device list rather than typing its address: typed addresses are tried over HTTPS, which Mac OS 9 cannot do. Found a problem? Please <a href="https://github.com/VikSn0w/localsend-retro/issues" rel="noopener">tell me what happened</a>.</p>
         </div>
       </div>
     </div>
